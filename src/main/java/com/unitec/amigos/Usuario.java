@@ -1,25 +1,31 @@
 package com.unitec.amigos;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.data.annotation.Id;
 
+import java.util.ArrayList;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Usuario {
     private String nombre;
 
     @Id
     private  String email;
-    private  int edad;
 
-    public Usuario() {
+    private  String nickname;
+
+    private ArrayList<Localizacion> localizacion;
+
+    public ArrayList<Localizacion> getLocalizacion() {
+        return localizacion;
     }
 
-    @Override
-    public String toString() {
-        return "Usuario{" +
-                "nombre='" + nombre + '\'' +
-                ", email='" + email + '\'' +
-                ", edad=" + edad +
-                '}';
+    public void setLocalizacion(ArrayList<Localizacion> localizacion) {
+        this.localizacion = localizacion;
+    }
+
+    public Usuario(){
+
     }
 
     public String getNombre() {
@@ -38,11 +44,11 @@ public class Usuario {
         this.email = email;
     }
 
-    public int getEdad() {
-        return edad;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 }
