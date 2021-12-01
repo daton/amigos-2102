@@ -14,13 +14,13 @@ public class Usuario {
 
     private  String nickname;
 
-    private ArrayList<Localizacion> localizacion;
+    private Localizacion localizacion;
 
-    public ArrayList<Localizacion> getLocalizacion() {
+    public Localizacion getLocalizacion() {
         return localizacion;
     }
 
-    public void setLocalizacion(ArrayList<Localizacion> localizacion) {
+    public void setLocalizacion(Localizacion localizacion) {
         this.localizacion = localizacion;
     }
 

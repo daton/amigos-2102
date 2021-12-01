@@ -25,17 +25,10 @@ public class ControladorLocalizacion {
             Usuario usuarioGuardado=        repoUsuario.findById(usuarioLLegado.getEmail()).get();
             //Primero obtenemos el historial de localizaciones
             //Primero checamos que exista el arraylist
-            ArrayList<Localizacion> locaGuardadas=new ArrayList<>();
-            if(usuarioGuardado.getLocalizacion()!=null)locaGuardadas=usuarioGuardado.getLocalizacion();
-            //Le asignamos fecha
-            Localizacion locaLlegada=        usuarioLLegado.getLocalizacion().get(0) ;
-            //Fecha y hora
 
-            locaLlegada.setFecha( LocalDate.now().toString()+"/"+ LocalTime.now());
 
-            locaGuardadas.add(usuarioLLegado.getLocalizacion().get(0));
             //guardamos nuevamente el usuario pero ya con su localizacion
-            usuarioGuardado.setLocalizacion(locaGuardadas);
+            usuarioGuardado.setLocalizacion(usuarioGuardado.getLocalizacion());
             //Guardamos nuevamente el usuario
             repoUsuario.save(usuarioGuardado);
 
