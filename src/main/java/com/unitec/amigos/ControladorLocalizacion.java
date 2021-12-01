@@ -64,6 +64,16 @@ public class ControladorLocalizacion {
         return usuariosRegistrados;
     }
 
+    @GetMapping("/localizaciones/{email}")
+    public Usuario buscaruSUARIO(@PathVariable String email){
+        //Solamente obtenemos los usuarios registros
+
+     Usuario u=repoUsuario.findById(email).get();
+
+
+        return u;
+    }
+
 
 
 
